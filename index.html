@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystery Password Puzzle</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .hint {
+      text-align: left;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>✨ Mystery Password Puzzle ✨</h2>
+    <p>Decode the following using Python string functions:</p>
+    <pre style="background:#eee;padding:10px;border-radius:8px;font-size:1.1rem;">
+"__D@7@_5C13N(3__RUL3$_2045!!"
+    </pre>
+
+    <div class="hint">
+      <strong>Challenge Instructions for Students:</strong>
+      <ul>
+        <li>Use <code>.lower()</code>, <code>.replace()</code>, <code>.strip()</code>, etc.</li>
+        <li>Replace characters like <code>@ → a</code>, <code>7 → t</code>, <code>5 → s</code>, <code>3 → e</code>, <code>( → c</code>, <code>$ → s</code></li>
+        <li>Reconstruct the original message into readable English</li>
+        <li>Once you find the password, enter it below and hit submit!</li>
+      </ul>
+    </div>
+
+    <p style="margin-top: 1.5rem;">Type the decoded password below:</p>
+    <input type="text" id="userInput" placeholder="Enter the password" />
+    <br />
+    <button onclick="checkPassword()">Submit</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const correctAnswer = "data science rules 2045!!";
+
+    function checkPassword() {
+      const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+      const resultDiv = document.getElementById("result");
+
+      if (userInput === correctAnswer) {
+        resultDiv.style.color = "green";
+        resultDiv.textContent = "✔️ Correct! You found the password!";
+      } else {
+        resultDiv.style.color = "red";
+        resultDiv.textContent = "❌ Incorrect. Try again!";
+      }
+    }
+  </script>
+</body>
+</html>
