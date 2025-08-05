@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GreetBot Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <h1>Welcome to Our Website</h1>
+  <p>Feel free to chat with GreetBot using the icon at the bottom right corner.</p>
+
+  <!-- Dialogflow Messenger script -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="GreetBot"
+    agent-id="9c61dfb6-c44e-4137-811f-b049ba0c5528"
+    language-code="en"
+  ></df-messenger>
+
+</body>
+</html>
